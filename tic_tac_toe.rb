@@ -1,5 +1,3 @@
-#/usr/bin/env ruby
-
 class TicTacToe
   def initialize
     @board = [
@@ -71,7 +69,7 @@ while t.check_winner.nil? && !t.game_tie
   puts "Player #{t.next_turn}'s turn"
   t.draw_board
   puts 'enter cordinates separated by space or comma'
-  coords = gets.chomp
+  coords = $stdin.gets.chomp
   coords = coords.include?(',') ? coords.split(',') : coords.split(' ')
   coords.map!(&:to_i)
   t.move(t.next_turn, coords[0], coords[1])
